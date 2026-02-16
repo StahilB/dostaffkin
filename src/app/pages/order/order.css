@@ -296,3 +296,30 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* Loader overlay centered over sidebar */
+.calc-loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 20;
+    pointer-events: all;
+}
+
+.calc-spinner {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 5px solid rgba(255,165,0,0.25);
+    border-top-color: #ff7a00;
+    box-shadow: 0 6px 18px rgba(255,122,0,0.12);
+    animation: calc-spin 1s linear infinite;
+}
+
+@keyframes calc-spin {
+    to { transform: rotate(360deg); }
+}
